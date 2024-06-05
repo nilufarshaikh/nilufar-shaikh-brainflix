@@ -1,16 +1,20 @@
 import "./Header.scss";
-import Logo from "../Logo/Logo";
+import logo from "../../assets/logo/brainflix-logo.svg";
 import Search from "../Search/Search";
 import UploadButton from "../UploadButton/UploadButton";
-import Profile from "../Profile/Profile";
+import profileIcon from "../../assets/images/Mohan-muruge.jpg";
 
 const Header = () => {
   return (
     <header className="header">
-      <Logo />
+      <div className="logo">
+        <img className="logo__image" src={logo} alt="BrainFlix Logo" />
+      </div>
       <Search />
       <UploadButton />
-      <Profile />
+      <div className="profile">
+        <img className="profile__image" src={profileIcon} alt="Profile Icon" />
+      </div>
     </header>
   );
 };
