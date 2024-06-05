@@ -6,10 +6,55 @@ body {
   margin: 0;
   padding: 0;
   font-family: $font-regular;
+  color: $primary-color-1;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: $font-bold;
+
+  @include tablet {
+    font-size: 33px;
+    line-height: 44px;
+  }
+}
+
+h3 {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: $font-bold;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+p {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: $font-regular;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 .error {
   border: 1px solid $error-color;
+}
+
+.divider {
+  margin: 0;
+  border: 1px solid $secondary-color-3;
+
+  &--headline {
+    @include tablet {
+      display: none;
+    }
+  }
 }
 
 .button {

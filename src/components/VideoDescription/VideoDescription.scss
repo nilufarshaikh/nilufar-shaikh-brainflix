@@ -1,0 +1,76 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/globals" as *;
+
+.video {
+  padding: 8px 16px 16px 16px;
+
+  @include tablet {
+    padding-right: 36px;
+    padding-left: 36px;
+  }
+
+  @include desktop {
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+
+  &__title {
+    margin: 0;
+    padding-bottom: 16px;
+
+    @include tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__author {
+    margin: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding-top: 16px;
+
+    @include tablet {
+      justify-content: space-between;
+      padding-top: 0;
+    }
+  }
+
+  &__upload-date {
+    color: $primary-color-3;
+  }
+
+  &__stats {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__content {
+    margin: 0;
+    padding-top: 16px;
+
+    @include tablet {
+      padding-top: 24px;
+    }
+  }
+}
+
+.video-stats {
+  margin: 0;
+  padding: 0 16px 16px 16px;
+  display: flex;
+  gap: 8px;
+  color: $primary-color-3;
+
+  @include tablet {
+    padding: 0;
+  }
+}
