@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+
+.logo {
+  max-width: 7.5rem;
+  max-height: 1.5625rem;
+
+  @include tablet {
+    margin-right: auto;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}

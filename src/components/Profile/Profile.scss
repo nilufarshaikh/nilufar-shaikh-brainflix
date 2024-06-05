@@ -1,0 +1,27 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.profile {
+  width: 2.25rem;
+  height: 2.25rem;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: $secondary-color-3;
+  top: 3.75rem;
+  right: 1rem;
+
+  @include tablet {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  &__image {
+    width: auto;
+    height: 106%;
+    margin-left: -4px;
+  }
+}
