@@ -1,0 +1,9 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/globals" as *;
+
+.add-comments {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 16px;
+}

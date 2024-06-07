@@ -42,6 +42,20 @@ p {
   }
 }
 
+label,
+button {
+  // font-size: 0.625rem;
+  font-size: 12px;
+  line-height: 1.25rem;
+  font-family: $font-demi;
+}
+
+textarea {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: $font-regular;
+}
+
 .error {
   border: 1px solid $error-color;
 }
@@ -65,9 +79,6 @@ p {
   background-color: $primary-color-2;
   color: $primary-color-4;
   border: none;
-  font-size: 0.625rem;
-  line-height: 1.25rem;
-  font-family: $font-demi;
 
   @include tablet {
     width: 9.375rem;
@@ -85,5 +96,91 @@ p {
     top: 0.5rem;
     left: 0.75rem;
     width: 1.25rem;
+  }
+}
+
+.profile {
+  width: 2.25rem;
+  height: 2.25rem;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: $secondary-color-3;
+  top: 3.75rem;
+  right: 1rem;
+
+  @include tablet {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  &__image {
+    width: auto;
+    height: 106%;
+    margin-left: -4px;
+  }
+
+  &--comments {
+    position: relative;
+    top: 20px;
+    right: 0;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: end;
+  }
+
+  &__control {
+    &--comment {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+
+  &__label {
+    color: $primary-color-3;
+  }
+
+  &__input {
+    padding: 12px;
+    color: $primary-color-1;
+    background-color: $secondary-color-4;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid $secondary-color-3;
+    opacity: 1;
+
+    @include tablet {
+      width: 15rem;
+      padding: 0.6875rem 1rem 0.6875rem 2.2rem;
+    }
+
+    &::placeholder {
+      color: $primary-color-1;
+    }
+
+    &:focus {
+      border: 2px solid $primary-color-2;
+    }
+
+    &--comment {
+      resize: none;
+
+      @include tablet {
+        width: auto;
+      }
+    }
   }
 }
