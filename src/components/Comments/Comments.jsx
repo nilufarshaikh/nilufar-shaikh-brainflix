@@ -1,25 +1,23 @@
 import "./Comments.scss";
-import { useState } from "react";
 import AddComments from "../AddComments/AddComments";
 import CommentsList from "../CommentsList/CommentsList";
 
-const Comments = ({ currentVideo }) => {
-  const [comments, setComments] = useState(currentVideo.comments);
-
-  const addComment = (newComment) => {
-    setComments([newComment, ...comments]);
-
-    //clear input
-  };
-
+const Comments = ({ selectedVideo }) => {
   return (
     <section className="comments">
       <h3 className="comments__title">
-        {currentVideo.comments.length} Comments
+        {selectedVideo.comments.length} Comments
       </h3>
-      <AddComments addComment={addComment} />
-      <hr className="divider" />
-      <CommentsList comments={comments} />
+      <AddComments />
+
+      {selectedVideo.comments.length > 0 ? (
+        <>
+          <CommentsList comments={selectedVideo.comments} />
+          <hr className="divider" />
+        </>
+      ) : (
+        <p className="comments__title">No comments.</p>
+      )}
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import "./CommentsList.scss";
 
 const CommentsList = ({ comments }) => {
-  return comments.map((comment, i) => {
+  return comments.map((comment, index) => {
     const date = new Date(comment.timestamp).toLocaleDateString("en-US", {
       year: "numeric",
       month: "numeric",
@@ -9,7 +9,8 @@ const CommentsList = ({ comments }) => {
     });
 
     return (
-      <div key={i}>
+      <div key={index}>
+        <hr className="divider" />
         <article className="comments__list">
           <div className="comments__avatar profile profile--comments"></div>
           <div className="comment">
@@ -20,7 +21,6 @@ const CommentsList = ({ comments }) => {
             <p className="comment__content">{comment.comment}</p>
           </div>
         </article>
-        <hr className="divider" />
       </div>
     );
   });
