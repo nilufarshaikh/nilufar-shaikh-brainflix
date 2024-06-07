@@ -2,13 +2,31 @@ import "./AddComments.scss";
 import commentIcon from "../../assets/icons/add_comment.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 
-const AddComments = () => {
+const AddComments = ({ addComment }) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const newComment = {
+      id: Math.floor(Math.random() * 10),
+      name: "Mohan Muruge",
+      comment: event.target.comment.value,
+      likes: 0,
+      timestamp: Date.now(),
+    };
+
+    addComment(newComment);
+  };
+
   return (
     <div className="add-comments">
       <div className="profile profile--comments">
         <img className="profile__image" src={avatar} alt="Profile Icon" />
       </div>
-      <form className="comment-form" id="addCommentsForm">
+      <form
+        className="comment-form"
+        id="addCommentsForm"
+        onSubmit={handleSubmit}
+      >
         <div className="comment-form__wrapper">
           <label htmlFor="comment" className="comment-form__label">
             JOIN THE CONVERSATION
@@ -18,9 +36,10 @@ const AddComments = () => {
             name="comment"
             placeholder="Add a new comment"
             className="comment-form__input"
+            id="comment"
           ></textarea>
         </div>
-        <button className="button">
+        <button className="button" type="submit">
           <img className="button__icon" src={commentIcon} alt="Comment Icon" />
           <span className="button__text">COMMENT</span>
         </button>
