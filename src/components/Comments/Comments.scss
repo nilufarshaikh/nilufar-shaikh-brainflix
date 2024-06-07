@@ -1,6 +1,5 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/globals" as *;
 
 .comments {
   padding: 0.5rem 1rem 1rem 1rem;
@@ -28,6 +27,7 @@
 }
 
 .comment {
+  width: calc(100% - 50px);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

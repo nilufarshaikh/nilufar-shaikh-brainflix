@@ -42,18 +42,56 @@ p {
   }
 }
 
-label,
-button {
-  // font-size: 0.625rem;
+label {
   font-size: 12px;
   line-height: 1.25rem;
   font-family: $font-demi;
 }
 
-textarea {
+button {
+  width: 100%;
+  height: 2.5rem;
+  position: relative;
+  font-size: 12px;
+  line-height: 1.25rem;
+  font-family: $font-demi;
+  background-color: $primary-color-2;
+  color: $primary-color-4;
+  border-radius: 4px;
+  border: none;
+
+  @include tablet {
+    width: 9.375rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-size: 0.75rem;
+  }
+
+  &:hover {
+    background-color: $secondary-color-2;
+  }
+}
+
+textarea,
+input {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-family: $font-regular;
+  background-color: $secondary-color-4;
+  color: $primary-color-1;
+  border-radius: 4px;
+  border: 1px solid $secondary-color-3;
+  opacity: 1;
+  outline: none;
+  resize: none;
+
+  &::placeholder {
+    color: $primary-color-1;
+  }
+
+  &:focus {
+    border: 2px solid $primary-color-2;
+  }
 }
 
 .error {
@@ -72,28 +110,9 @@ textarea {
 }
 
 .button {
-  width: 100%;
-  height: 2.5rem;
-  position: relative;
-  border-radius: 4px;
-  background-color: $primary-color-2;
-  color: $primary-color-4;
-  border: none;
-
-  @include tablet {
-    width: 9.375rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    font-size: 0.75rem;
-  }
-
-  &:hover {
-    background-color: $secondary-color-2;
-  }
-
   &__icon {
     position: absolute;
-    top: 0.5rem;
+    top: 0.6rem;
     left: 0.75rem;
     width: 1.25rem;
   }
@@ -106,7 +125,7 @@ textarea {
   overflow: hidden;
   border-radius: 50%;
   background-color: $secondary-color-3;
-  top: 3.75rem;
+  top: 3.55rem;
   right: 1rem;
 
   @include tablet {
@@ -127,60 +146,5 @@ textarea {
     position: relative;
     top: 20px;
     right: 0;
-  }
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 1rem;
-
-  @include tablet {
-    flex-direction: row;
-    align-items: end;
-  }
-
-  &__control {
-    &--comment {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-  }
-
-  &__label {
-    color: $primary-color-3;
-  }
-
-  &__input {
-    padding: 12px;
-    color: $primary-color-1;
-    background-color: $secondary-color-4;
-    outline: none;
-    border-radius: 4px;
-    border: 1px solid $secondary-color-3;
-    opacity: 1;
-
-    @include tablet {
-      width: 15rem;
-      padding: 0.6875rem 1rem 0.6875rem 2.2rem;
-    }
-
-    &::placeholder {
-      color: $primary-color-1;
-    }
-
-    &:focus {
-      border: 2px solid $primary-color-2;
-    }
-
-    &--comment {
-      resize: none;
-
-      @include tablet {
-        width: auto;
-      }
-    }
   }
 }
