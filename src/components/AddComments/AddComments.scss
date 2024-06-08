@@ -30,6 +30,7 @@
 
   &__input {
     padding: 0.5625rem 0.75rem;
+    height: 6em;
 
     @include tablet {
       width: auto;

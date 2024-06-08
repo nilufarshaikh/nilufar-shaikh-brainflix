@@ -14,9 +14,7 @@ function App() {
       <Header />
       <main className="main">
         <VideoDetails selectedVideo={selectedVideo} />
-
-        {/* Move this inside VideoDetails */}
-        <VideoDescription />
+        <VideoDescription selectedVideo={selectedVideo} />
         <Comments selectedVideo={selectedVideo} />
       </main>
     </>
