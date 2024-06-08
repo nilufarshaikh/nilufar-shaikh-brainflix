@@ -1,1 +1,11 @@
+@use "../src/styles/partials/mixins" as *;
 @use "../src/styles/partials/globals" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}

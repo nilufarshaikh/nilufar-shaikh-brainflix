@@ -1,0 +1,45 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.next-video-nav {
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.next-video {
+  display: flex;
+  cursor: pointer;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    border-radius: 8px;
+  }
+
+  &__wrapper {
+    width: 100px;
+    height: 57px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $secondary-color-3;
+  }
+
+  &__details {
+    flex: 1;
+  }
+
+  &__author {
+    margin: 0;
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
