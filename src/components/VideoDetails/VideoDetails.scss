@@ -1,0 +1,71 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+// @TODO Fix css
+.hero {
+  display: flex;
+  position: relative;
+  background-color: $primary-color-1;
+
+  &__video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.video__controls {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  height: 20px;
+  justify-content: center;
+}
+
+.play {
+  width: 9px;
+  border-radius: 8px;
+  padding: 0px 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+  border-radius: 6px;
+  padding: 3px 4px;
+  gap: 4px;
+  align-items: center;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video__duration {
+  color: white;
+  font-size: 10px;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  width: 80vw;
+}
+
+.progress__bar {
+  height: 5px;
+  width: 100%;
+  margin: 0 12px;
+}
+
+.fullscreen {
+  width: 16px;
+}
+
+.volume {
+  width: 16px;
+}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "./components/Header/Header";
 import VideoDescription from "./components/VideoDescription/VideoDescription";
 import Comments from "./components/Comments/Comments";
+import VideoDetails from "./components/VideoDetails/VideoDetails";
 import videoDetails from "./data/video-details.json";
 
 function App() {
@@ -11,8 +12,13 @@ function App() {
   return (
     <>
       <Header />
-      <VideoDescription />
-      <Comments selectedVideo={selectedVideo} />
+      <main className="main">
+        <VideoDetails selectedVideo={selectedVideo} />
+
+        {/* Move this inside VideoDetails */}
+        <VideoDescription />
+        <Comments selectedVideo={selectedVideo} />
+      </main>
     </>
   );
 }
