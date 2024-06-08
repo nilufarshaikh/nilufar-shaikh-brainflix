@@ -7,21 +7,35 @@ const VideoDetails = ({ selectedVideo }) => {
   return (
     <div className="hero">
       <video
-        className="hero__video"
+        className="hero__video-link"
         poster={selectedVideo.image}
         src={selectedVideo.video}
       >
         <p>Your browser doesn't support HTML video.</p>
       </video>
-      <div className="video__controls">
-        <img className="play" src={playBtn} alt="Play Button" />
-        <div className="progress">
-          <progress className="progress__bar" value="0" max="100"></progress>
-          <span className="video__duration">0.00/{selectedVideo.duration}</span>
+      <div className="hero__video-controls">
+        <img
+          className="video-control video-control--play"
+          src={playBtn}
+          alt="Play Button"
+        />
+        <div className="video-control video-control--scrubbing">
+          <div className="video-control__progress-bar"></div>
+          <span className="video-control__duration">
+            0.00/{selectedVideo.duration}
+          </span>
         </div>
-        <div className="controls">
-          <img className="fullscreen" src={fullScreenBtn} alt="Play Button" />
-          <img className="volume" src={volumeBtn} alt="Play Button" />
+        <div className="video-control video-control--other">
+          <img
+            className="video-control__icon"
+            src={fullScreenBtn}
+            alt="Full Screen Button"
+          />
+          <img
+            className="video-control__icon"
+            src={volumeBtn}
+            alt="Volume Button"
+          />
         </div>
       </div>
     </div>
