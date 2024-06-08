@@ -21,19 +21,19 @@
   display: flex;
   width: 100%;
   gap: 8px;
-  height: 20px;
   justify-content: center;
+  height: 24px;
 }
 
 .play {
   width: 9px;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 0px 12px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .controls {
-  border-radius: 6px;
+  border-radius: 4px;
   padding: 3px 4px;
   gap: 4px;
   align-items: center;
@@ -52,7 +52,7 @@
   justify-content: space-around;
   padding: 3px;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
+  border-radius: 4px;
   width: 80vw;
 }
 
