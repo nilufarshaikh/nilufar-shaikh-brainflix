@@ -1,27 +1,29 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.add-comments {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 16px;
+.comments {
+  &__add-comments {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1rem;
 
-  @include tablet {
-    padding-bottom: 1.5rem;
-  }
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
 
-  @include desktop {
-    padding-right: 1.5rem;
-    padding-left: 1rem;
-    gap: 1.5rem;
+    @include desktop {
+      gap: 1.5rem;
+      padding-right: 1.5rem;
+      padding-left: 1rem;
+    }
   }
 }
 
 .comment-form {
   display: flex;
   flex-direction: column;
-  flex: 1;
   gap: 1rem;
+  flex: 1;
 
   @include tablet {
     flex-direction: row;
@@ -40,11 +42,12 @@
 
   &__label {
     color: $primary-color-3;
+    padding-bottom: 0.25rem;
   }
 
   &__input {
+    height: 5rem;
     padding: 0.5625rem 0.75rem;
-    height: 6em;
 
     @include tablet {
       width: auto;

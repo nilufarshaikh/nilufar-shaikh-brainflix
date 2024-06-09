@@ -1,52 +1,36 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.next-video-nav {
-  padding: 0 1rem 1rem 1rem;
-
-  @include tablet {
-    padding-top: 0.5rem;
-    padding-right: 2.25rem;
-    padding-left: 2.25rem;
-  }
-
-  @include desktop {
-    border-left: 2px solid $secondary-color-3;
-    padding-right: 8rem;
-    padding-left: 1.5rem;
-  }
-}
-
 .next-video {
   display: flex;
   flex-direction: column;
 
   @include desktop {
     width: 100%;
-    padding-top: 24px;
+    padding-top: 1.5rem;
   }
 
   &__label {
     color: $primary-color-3;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
     margin-top: 0px;
-    font-size: 12px;
+    font-size: 0.75rem;
 
     @include tablet {
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
     }
   }
 
   &__item {
     display: flex;
     width: 100%;
-    max-width: 600px;
+    max-width: 37.5rem;
     box-sizing: border-box;
-    padding: 8px 0;
-    border-radius: 8px;
+    padding: 0.5rem 0;
+    border-radius: 4px;
 
     @include tablet {
-      padding: 12px 0;
+      padding: 0.75rem 0;
       width: 45%;
     }
 
@@ -56,14 +40,13 @@
   }
 
   &__link {
-    background-color: $secondary-color-3;
     flex-shrink: 0;
     width: 7.12rem;
     height: auto;
     object-fit: cover;
-    margin-right: 16px;
+    margin-right: 1rem;
     border-radius: 4px;
-    background-color: #e1e1e1;
+    background-color: $secondary-color-3;
   }
 
   &__info {

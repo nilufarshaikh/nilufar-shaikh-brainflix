@@ -1,17 +1,2 @@
 @use "../src/styles/partials/mixins" as *;
 @use "../src/styles/partials/globals" as *;
-
-.main {
-  display: flex;
-  flex-direction: column;
-
-  @include desktop {
-    flex-direction: row;
-  }
-}
-
-.selected-video-info {
-  @include desktop {
-    width: 85%;
-  }
-}

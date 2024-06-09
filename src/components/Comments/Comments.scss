@@ -18,20 +18,4 @@
     margin: 0;
     padding-bottom: 1rem;
   }
-
-  &__list {
-    display: flex;
-    gap: 1rem;
-    padding-bottom: 1rem;
-
-    @include tablet {
-      padding-bottom: 1.5rem;
-    }
-
-    @include desktop {
-      padding-left: 1rem;
-      padding-right: 24px;
-      gap: 1.5rem;
-    }
-  }
 }

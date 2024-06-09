@@ -9,10 +9,10 @@ const CommentsList = ({ comments }) => {
     });
 
     return (
-      <div key={index}>
+      <div className="comments__list-box" key={index}>
         <hr className="divider" />
-        <article className="comments__list">
-          <div className="comments__avatar profile profile--comments"></div>
+        <article className="comments-list">
+          <div className=" comments-list__avatar profile"></div>
           <div className="comment">
             <div className="comment__wrapper">
               <h3 className="comment__author">{comment.name}</h3>

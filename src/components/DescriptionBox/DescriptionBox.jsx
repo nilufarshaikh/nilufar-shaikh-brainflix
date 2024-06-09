@@ -1,8 +1,8 @@
-import "./VideoDescription.scss";
+import "./DescriptionBox.scss";
 import views from "../../assets/icons/views.svg";
 import likes from "../../assets/icons/likes.svg";
 
-const VideoDescription = ({ selectedVideo }) => {
+const DescriptionBox = ({ selectedVideo }) => {
   const date = new Date(selectedVideo.timestamp).toLocaleDateString("en-US", {
     year: "numeric",
     month: "numeric",
@@ -10,15 +10,17 @@ const VideoDescription = ({ selectedVideo }) => {
   });
 
   return (
-    <section className="video">
-      <h1 className="video__title">{selectedVideo.title}</h1>
+    <section className="description-box">
+      <h1 className="description-box__title">{selectedVideo.title}</h1>
       <hr className="divider divider--headline" />
-      <article className="video__info">
-        <div className="video__stats">
-          <h3 className="video__author">By {selectedVideo.channel}</h3>
-          <p className="video__upload-date">{date}</p>
+      <article className="description-box__info">
+        <div className="description-box__stats">
+          <h3 className="description-box__author">
+            By {selectedVideo.channel}
+          </h3>
+          <p className="description-box__upload-date">{date}</p>
         </div>
-        <div className="video__stats">
+        <div className="description-box__stats">
           <p className="video-stats">
             <img
               className="video-stats__icon"
@@ -37,10 +39,10 @@ const VideoDescription = ({ selectedVideo }) => {
           </p>
         </div>
       </article>
-      <hr className="divider divider" />
-      <p className="video__content">{selectedVideo.description}</p>
+      <hr className="divider" />
+      <p className="description-box__content">{selectedVideo.description}</p>
     </section>
   );
 };
 
-export default VideoDescription;
+export default DescriptionBox;

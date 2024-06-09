@@ -1,12 +1,34 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+.comments-list {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+
+  @include tablet {
+    padding-bottom: 1.5rem;
+  }
+
+  @include desktop {
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  &__avatar {
+    position: relative;
+    top: 1.25rem;
+    right: 0;
+  }
+}
+
 .comment {
-  width: calc(100% - 50px);
+  width: calc(100% - 3.125rem);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding-top: 20px;
+  padding-top: 1.25rem;
 
   &__wrapper {
     display: flex;

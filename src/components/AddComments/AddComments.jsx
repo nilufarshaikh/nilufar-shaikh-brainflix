@@ -4,7 +4,7 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 const AddComments = () => {
   return (
-    <div className="add-comments">
+    <div className="comments__add-comments">
       <div className="profile profile--comments">
         <img className="profile__image" src={avatar} alt="Profile Icon" />
       </div>

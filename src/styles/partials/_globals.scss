@@ -43,7 +43,7 @@ p {
 }
 
 label {
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.25rem;
   font-family: $font-demi;
 }
@@ -52,13 +52,14 @@ button {
   width: 100%;
   height: 2.5rem;
   position: relative;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.25rem;
   font-family: $font-demi;
   background-color: $primary-color-2;
   color: $primary-color-4;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 
   @include tablet {
     width: 9.375rem;
@@ -113,7 +114,7 @@ input {
     }
   }
 
-  &--big-hide {
+  &--comments-list {
     @include desktop {
       display: none;
     }
@@ -133,11 +134,11 @@ input {
   width: 2.25rem;
   height: 2.25rem;
   position: absolute;
+  top: 3.55rem;
+  right: 1rem;
   overflow: hidden;
   border-radius: 50%;
   background-color: $secondary-color-3;
-  top: 3.55rem;
-  right: 1rem;
 
   @include tablet {
     width: 2.5rem;
@@ -151,11 +152,5 @@ input {
     width: auto;
     height: 106%;
     margin-left: -4px;
-  }
-
-  &--comments {
-    position: relative;
-    top: 20px;
-    right: 0;
   }
 }
