@@ -5,7 +5,13 @@
   display: flex;
   flex-direction: column;
 
-  @include tablet {
+  @include desktop {
     flex-direction: row;
+  }
+}
+
+.selected-video-info {
+  @include desktop {
+    width: 85%;
   }
 }

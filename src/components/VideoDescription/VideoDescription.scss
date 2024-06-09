@@ -10,16 +10,22 @@
   }
 
   @include desktop {
-    padding-right: 8rem;
+    padding-right: 0;
     padding-left: 8rem;
   }
 
   &__title {
     margin: 0;
+    padding-top: 0.5rem;
     padding-bottom: 1rem;
 
     @include tablet {
+      padding-top: 1.5rem;
       padding-bottom: 0;
+    }
+
+    @include desktop {
+      padding-right: 1.5rem;
     }
   }
 
@@ -36,6 +42,10 @@
     @include tablet {
       justify-content: space-between;
       padding-top: 0;
+    }
+
+    @include desktop {
+      padding-right: 1.5rem;
     }
   }
 
@@ -58,6 +68,10 @@
 
     @include tablet {
       padding-top: 1.5rem;
+    }
+
+    @include desktop {
+      padding-right: 1.5rem;
     }
   }
 }

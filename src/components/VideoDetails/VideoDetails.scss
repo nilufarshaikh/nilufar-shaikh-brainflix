@@ -2,13 +2,17 @@
 @use "../../styles/partials/mixins" as *;
 
 .hero {
-  display: flex;
   position: relative;
-  background-color: $primary-color-1;
+  width: 100%;
+  padding-top: 56.25%;
+  background-color: $secondary-color-1;
+  overflow: hidden;
 
   &__video-link {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
+    height: 100%;
   }
 }

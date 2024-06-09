@@ -14,7 +14,6 @@ const AddComments = () => {
             JOIN THE CONVERSATION
           </label>
           <textarea
-            rows="1"
             name="comment"
             placeholder="Add a new comment"
             className="comment-form__input"

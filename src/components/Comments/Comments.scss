@@ -10,7 +10,7 @@
   }
 
   @include desktop {
-    padding-right: 8rem;
+    padding-right: 0;
     padding-left: 8rem;
   }
 
@@ -23,29 +23,15 @@
     display: flex;
     gap: 1rem;
     padding-bottom: 1rem;
-  }
-}
 
-.comment {
-  width: calc(100% - 50px);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding-top: 20px;
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
 
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__author {
-    margin: 0;
-  }
-
-  &__date {
-    margin: 0;
-    color: $primary-color-3;
-  }
-  &__content {
-    margin: 0;
+    @include desktop {
+      padding-left: 1rem;
+      padding-right: 24px;
+      gap: 1.5rem;
+    }
   }
 }

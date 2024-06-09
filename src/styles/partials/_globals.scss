@@ -23,7 +23,7 @@ h1 {
 h3 {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: $font-bold;
+  font-family: $font-demi;
 
   @include tablet {
     font-size: 0.875rem;
@@ -85,6 +85,11 @@ input {
   outline: none;
   resize: none;
 
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   &::placeholder {
     color: $primary-color-1;
   }
@@ -104,6 +109,12 @@ input {
 
   &--headline {
     @include tablet {
+      display: none;
+    }
+  }
+
+  &--big-hide {
+    @include desktop {
       display: none;
     }
   }

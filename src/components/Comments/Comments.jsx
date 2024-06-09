@@ -13,7 +13,7 @@ const Comments = ({ selectedVideo }) => {
       {selectedVideo.comments.length > 0 ? (
         <>
           <CommentsList comments={selectedVideo.comments} />
-          <hr className="divider" />
+          <hr className="divider divider--big-hide" />
         </>
       ) : (
         <p className="comments__title">No comments.</p>
