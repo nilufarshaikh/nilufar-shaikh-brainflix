@@ -5,14 +5,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: $font-regular;
+  font-family: $font-family;
   color: $primary-color-1;
 }
 
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-family: $font-bold;
+  font-weight: 700;
+  font-style: normal;
 
   @include tablet {
     font-size: 2.0625rem;
@@ -23,7 +24,8 @@ h1 {
 h3 {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: $font-demi;
+  font-weight: 600;
+  font-style: normal;
 
   @include tablet {
     font-size: 0.875rem;
@@ -34,7 +36,7 @@ h3 {
 p {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: $font-regular;
+  font-family: $font-family;
 
   @include tablet {
     font-size: 0.875rem;
@@ -45,7 +47,8 @@ p {
 label {
   font-size: 0.75rem;
   line-height: 1.25rem;
-  font-family: $font-demi;
+  font-weight: 600;
+  font-style: normal;
 }
 
 button {
@@ -54,7 +57,8 @@ button {
   position: relative;
   font-size: 0.75rem;
   line-height: 1.25rem;
-  font-family: $font-demi;
+  font-weight: 600;
+  font-style: normal;
   background-color: $primary-color-2;
   color: $primary-color-4;
   border-radius: 4px;
@@ -77,7 +81,7 @@ textarea,
 input {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: $font-regular;
+  font-family: $font-family;
   background-color: $secondary-color-4;
   color: $primary-color-1;
   border-radius: 4px;
@@ -152,5 +156,11 @@ input {
     width: auto;
     height: 106%;
     margin-left: -4px;
+  }
+
+  &--comments {
+    position: relative;
+    top: 1.5rem;
+    right: 0;
   }
 }
