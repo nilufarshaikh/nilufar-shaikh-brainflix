@@ -9,12 +9,12 @@ const NextVideoNav = ({ videos }) => {
       {videos.map((video) => (
         <Link
           to={`/videos/${video.id}`}
-          className="plant-nav__link"
+          className="next-video__link"
           key={video.id}
         >
           <article className="next-video__item">
             <video
-              className="next-video__link"
+              className="next-video__src"
               src={video.video}
               poster={video.image}
             ></video>

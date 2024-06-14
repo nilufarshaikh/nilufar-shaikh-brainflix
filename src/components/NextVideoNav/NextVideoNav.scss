@@ -41,6 +41,11 @@
   }
 
   &__link {
+    text-decoration: none;
+    color: $primary-color-1;
+  }
+
+  &__src {
     flex-shrink: 0;
     width: 7.12rem;
     height: auto;
