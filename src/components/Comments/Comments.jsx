@@ -1,9 +1,10 @@
-import "./Comments.scss";
 import AddComments from "../AddComments/AddComments";
 import CommentsList from "../CommentsList/CommentsList";
 
+import "./Comments.scss";
+
 const Comments = ({ selectedVideo }) => {
-  return (
+  return selectedVideo ? (
     <section className="comments">
       <h3 className="comments__title">
         {selectedVideo.comments.length} Comments
@@ -18,6 +19,8 @@ const Comments = ({ selectedVideo }) => {
         <p className="comments__title">No comments.</p>
       )}
     </section>
+  ) : (
+    <></>
   );
 };
 

@@ -1,7 +1,7 @@
 import "./VideoPlayer.scss";
 
 const VideoPlayer = ({ selectedVideo }) => {
-  return (
+  return selectedVideo ? (
     <section className="video-player">
       <video
         className="video-player__link"
@@ -12,6 +12,8 @@ const VideoPlayer = ({ selectedVideo }) => {
         <p>Your browser doesn't support HTML video.</p>
       </video>
     </section>
+  ) : (
+    <></>
   );
 };
 

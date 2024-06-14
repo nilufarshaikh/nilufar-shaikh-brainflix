@@ -1,15 +1,20 @@
-import "./DescriptionBox.scss";
-import views from "../../assets/icons/views.svg";
 import likes from "../../assets/icons/likes.svg";
+import views from "../../assets/icons/views.svg";
+
+import "./DescriptionBox.scss";
 
 const DescriptionBox = ({ selectedVideo }) => {
-  const date = new Date(selectedVideo.timestamp).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-  });
+  const convertDate = (timestamp) => {
+    const date = new Date(timestamp).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+    });
 
-  return (
+    return date;
+  };
+
+  return selectedVideo ? (
     <section className="description-box">
       <h1 className="description-box__title">{selectedVideo.title}</h1>
       <hr className="divider divider--headline" />
@@ -18,7 +23,9 @@ const DescriptionBox = ({ selectedVideo }) => {
           <h3 className="description-box__author">
             By {selectedVideo.channel}
           </h3>
-          <p className="description-box__upload-date">{date}</p>
+          <p className="description-box__upload-date">
+            {convertDate(selectedVideo.timestamp)}
+          </p>
         </div>
         <div className="description-box__stats">
           <p className="video-stats">
@@ -42,6 +49,8 @@ const DescriptionBox = ({ selectedVideo }) => {
       <hr className="divider" />
       <p className="description-box__content">{selectedVideo.description}</p>
     </section>
+  ) : (
+    <></>
   );
 };
 
