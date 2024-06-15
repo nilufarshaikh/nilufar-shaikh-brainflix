@@ -106,23 +106,6 @@ button {
   }
 }
 
-.loader {
-  font-weight: bold;
-  font-family: sans-serif;
-  font-size: 30px;
-  animation: l1 1s linear infinite alternate;
-
-  &:before {
-    content: "Loading...";
-  }
-}
-
-@keyframes l1 {
-  to {
-    opacity: 0;
-  }
-}
-
 .error {
   border: 1px solid $error-color;
 }
@@ -211,5 +194,17 @@ button {
     position: relative;
     top: 1.5rem;
     right: 0;
+  }
+}
+
+.loader {
+  text-align: center;
+  animation: l1 1s linear infinite alternate;
+  color: $primary-color-1;
+}
+
+@keyframes l1 {
+  to {
+    opacity: 0;
   }
 }

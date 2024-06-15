@@ -10,13 +10,13 @@ import Comments from "../../components/Comments/Comments";
 import DescriptionBox from "../../components/DescriptionBox/DescriptionBox";
 import NextVideoNav from "../../components/NextVideoNav/NextVideoNav";
 
+const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
+const API_KEY = "09187f07-f407-42d7-af19-75b70c181c1f";
+
 const VideoDetailsPage = () => {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const { videoId } = useParams();
-
-  const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
-  const API_KEY = "09187f07-f407-42d7-af19-75b70c181c1f";
 
   useEffect(() => {
     const getVideos = async () => {
@@ -79,7 +79,7 @@ const VideoDetailsPage = () => {
   }, [videoId]);
 
   if (videos.length === 0) {
-    return <p>Loading...</p>;
+    return <div className="loader">Loading...</div>;
   }
 
   return (
