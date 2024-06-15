@@ -19,6 +19,14 @@
   @include desktop {
     padding: 1rem 8rem;
   }
+
+  &__link {
+    width: 100%;
+
+    @include tablet {
+      width: 9.375rem;
+    }
+  }
 }
 
 .logo {

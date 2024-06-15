@@ -2,12 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import "./VideoDetailsPage.scss";
+
+import Header from "../../components/Header/Header";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import Comments from "../../components/Comments/Comments";
 import DescriptionBox from "../../components/DescriptionBox/DescriptionBox";
 import NextVideoNav from "../../components/NextVideoNav/NextVideoNav";
-import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
-
-import "./VideoDetailsPage.scss";
 
 const VideoDetailsPage = () => {
   const [videos, setVideos] = useState([]);
@@ -82,18 +83,21 @@ const VideoDetailsPage = () => {
   }
 
   return (
-    <main className="main">
-      <VideoPlayer selectedVideo={selectedVideo} />
-      <section className="video-info">
-        <div className="video-info__selected">
-          <DescriptionBox selectedVideo={selectedVideo} />
-          <Comments selectedVideo={selectedVideo} />
-        </div>
-        <div className="video-info__next">
-          <NextVideoNav videos={filteredVideos} />
-        </div>
-      </section>
-    </main>
+    <>
+      <Header />
+      <main className="main">
+        <VideoPlayer selectedVideo={selectedVideo} />
+        <section className="video-info">
+          <div className="video-info__selected">
+            <DescriptionBox selectedVideo={selectedVideo} />
+            <Comments selectedVideo={selectedVideo} />
+          </div>
+          <div className="video-info__next">
+            <NextVideoNav videos={filteredVideos} />
+          </div>
+        </section>
+      </main>
+    </>
   );
 };
 
