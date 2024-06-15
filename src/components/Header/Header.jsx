@@ -9,11 +9,14 @@ import uploadIcon from "../../assets/icons/upload.svg";
 const Header = () => {
   return (
     <header className="header">
-      <Link to="/">
-        <div className="logo">
-          <img className="logo__image" src={logo} alt="BrainFlix Logo" />
-        </div>
-      </Link>
+      <div className="logo">
+        <Link className="logo__link" to="/">
+          <div className="logo__wrapper">
+            <img className="logo__image" src={logo} alt="BrainFlix Logo" />
+          </div>
+        </Link>
+      </div>
+
       <Search />
       <Link to="/upload" className="header__link">
         <button className="button">

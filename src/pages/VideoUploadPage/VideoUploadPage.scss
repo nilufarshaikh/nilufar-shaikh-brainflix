@@ -13,6 +13,7 @@
   @include desktop {
     padding-right: 8rem;
     padding-left: 8rem;
+    height: 60vw;
   }
 
   &__right {
@@ -68,10 +69,6 @@
 
   &__thumbnail-wrapper {
     width: 100%;
-
-    // @include tablet {
-    //   width: 50%;
-    // }
   }
 
   &__thumbnail {

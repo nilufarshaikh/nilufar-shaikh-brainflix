@@ -13,6 +13,10 @@
     position: absolute;
     top: 0.6rem;
     left: 0.75rem;
+
+    @include tablet {
+      top: 0.7rem;
+    }
   }
 
   &__input {
