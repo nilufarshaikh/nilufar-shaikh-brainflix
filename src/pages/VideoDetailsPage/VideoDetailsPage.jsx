@@ -81,8 +81,6 @@ const VideoDetailsPage = () => {
     return <p>Loading...</p>;
   }
 
-  //TODO: Fallbacks for page not found
-
   return (
     <main className="main">
       <VideoPlayer selectedVideo={selectedVideo} />
