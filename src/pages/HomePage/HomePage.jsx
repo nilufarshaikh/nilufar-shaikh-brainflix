@@ -1,15 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 
-import "./VideoDetailsPage.scss";
+import "./HomePage.scss";
 
 import Header from "../../components/Header/Header";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import NextVideoNav from "../../components/NextVideoNav/NextVideoNav";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 
-const VideoDetailsPage = () => {
+const HomePage = () => {
   const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
   const API_KEY = "09187f07-f407-42d7-af19-75b70c181c1f";
 
@@ -64,6 +64,10 @@ const VideoDetailsPage = () => {
     return <div className="loader">Loading...</div>;
   }
 
+  if (!videos.find((video) => video.id === selectedVideoId)) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <>
       <Header />
@@ -83,4 +87,4 @@ const VideoDetailsPage = () => {
   );
 };
 
-export default VideoDetailsPage;
+export default HomePage;

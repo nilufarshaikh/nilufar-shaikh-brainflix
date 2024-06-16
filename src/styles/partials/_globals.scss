@@ -200,12 +200,5 @@ button {
 .loader {
   padding: 1rem;
   text-align: center;
-  animation: l1 1s linear infinite alternate;
   color: $primary-color-1;
-}
-
-@keyframes l1 {
-  to {
-    opacity: 0;
-  }
 }

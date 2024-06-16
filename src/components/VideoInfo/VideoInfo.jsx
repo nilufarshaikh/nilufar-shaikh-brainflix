@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+import "./VideoInfo.scss";
+
 import Comments from "../Comments/Comments";
 import DescriptionBox from "../DescriptionBox/DescriptionBox";
 
@@ -24,10 +26,6 @@ const VideoInfo = ({ selectedVideoId, selectedVideo }) => {
 
     getSelectedVideo();
   }, [selectedVideo]);
-
-  //   if (video === null) {
-  //     return <div className="loader">Loading...</div>;
-  //   }
 
   return (
     <div className="video-info__selected">
