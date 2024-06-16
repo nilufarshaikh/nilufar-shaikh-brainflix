@@ -3,24 +3,24 @@ import CommentsList from "../CommentsList/CommentsList";
 
 import "./Comments.scss";
 
-const Comments = ({ selectedVideo }) => {
-  return selectedVideo ? (
+const Comments = ({ video }) => {
+  if (video === null) {
+    return;
+  }
+
+  return (
     <section className="comments">
-      <h3 className="comments__title">
-        {selectedVideo.comments.length} Comments
-      </h3>
+      <h3 className="comments__title">{video.comments.length} Comments</h3>
       <AddComments />
-      {selectedVideo.comments.length > 0 ? (
+      {video.comments.length > 0 ? (
         <>
-          <CommentsList comments={selectedVideo.comments} />
+          <CommentsList comments={video.comments} />
           <hr className="divider divider--comments-list" />
         </>
       ) : (
         <p className="comments__title">No comments.</p>
       )}
     </section>
-  ) : (
-    <></>
   );
 };
 

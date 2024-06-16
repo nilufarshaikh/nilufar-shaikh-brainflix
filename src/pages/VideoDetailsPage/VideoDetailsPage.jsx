@@ -6,14 +6,13 @@ import "./VideoDetailsPage.scss";
 
 import Header from "../../components/Header/Header";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
-import Comments from "../../components/Comments/Comments";
-import DescriptionBox from "../../components/DescriptionBox/DescriptionBox";
 import NextVideoNav from "../../components/NextVideoNav/NextVideoNav";
-
-const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
-const API_KEY = "09187f07-f407-42d7-af19-75b70c181c1f";
+import VideoInfo from "../../components/VideoInfo/VideoInfo";
 
 const VideoDetailsPage = () => {
+  const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
+  const API_KEY = "09187f07-f407-42d7-af19-75b70c181c1f";
+
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const { videoId } = useParams();
@@ -25,6 +24,7 @@ const VideoDetailsPage = () => {
           `${API_URL}/videos?api_key=${API_KEY}`
         );
         setVideos(response.data);
+        setSelectedVideo(response.data[0]);
       } catch (error) {
         console.log(error);
       }
@@ -33,50 +33,32 @@ const VideoDetailsPage = () => {
     getVideos();
   }, []);
 
-  let filteredVideos = [];
   let selectedVideoId = null;
 
   if (videos.length !== 0) {
-    selectedVideoId = videoId || videos[0].id;
-
-    filteredVideos = videos.filter((video) => {
-      return selectedVideoId !== video.id;
-    });
+    selectedVideoId = videoId || selectedVideo.id;
   }
 
   useEffect(() => {
-    const getSelectedVideo = async () => {
+    const getSingleVideo = async (selectedVideoId) => {
       try {
-        if (videos.length !== 0 && !videoId) {
-          let response = await axios.get(
-            `${API_URL}/videos/${videos[0].id}?api_key=${API_KEY}`
-          );
-          setSelectedVideo(response.data);
-        }
+        let response = await axios.get(
+          `${API_URL}/videos/${selectedVideoId}?api_key=${API_KEY}`
+        );
+        setSelectedVideo(response.data);
       } catch (error) {
         console.log(error);
       }
     };
 
-    getSelectedVideo();
-  }, [videos]);
-
-  useEffect(() => {
-    const getSingleVideo = async () => {
-      try {
-        if (videoId) {
-          let response = await axios.get(
-            `${API_URL}/videos/${videoId}?api_key=${API_KEY}`
-          );
-          setSelectedVideo(response.data);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    getSingleVideo();
+    if (selectedVideoId) {
+      getSingleVideo(selectedVideoId);
+    }
   }, [videoId]);
+
+  const filteredVideos = videos.filter((video) => {
+    return selectedVideoId !== video.id;
+  });
 
   if (videos.length === 0) {
     return <div className="loader">Loading...</div>;
@@ -88,10 +70,10 @@ const VideoDetailsPage = () => {
       <main className="main">
         <VideoPlayer selectedVideo={selectedVideo} />
         <section className="video-info">
-          <div className="video-info__selected">
-            <DescriptionBox selectedVideo={selectedVideo} />
-            <Comments selectedVideo={selectedVideo} />
-          </div>
+          <VideoInfo
+            selectedVideoId={selectedVideoId}
+            selectedVideo={selectedVideo}
+          />
           <div className="video-info__next">
             <NextVideoNav videos={filteredVideos} />
           </div>
