@@ -10,8 +10,8 @@ import NextVideoNav from "../../components/NextVideoNav/NextVideoNav";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 
 const HomePage = () => {
-  const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
-  const API_KEY = "09187f07-f407-42d7-af19-75b70c181c1f";
+  const API_URL = import.meta.env.VITE_API_URL;
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
