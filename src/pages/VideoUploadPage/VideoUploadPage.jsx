@@ -1,3 +1,4 @@
+import axios from "axios";
 import Header from "../../components/Header/Header";
 import publishIcon from "../../assets/icons/publish.svg";
 import { useNavigate } from "react-router-dom";
@@ -7,12 +8,35 @@ import "./VideoUploadPage.scss";
 
 const VideoUploadPage = () => {
   const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL;
+  const API_KEY = import.meta.env.VITE_API_KEY;
+
+  const uploadVideo = async (eventRec) => {
+    try {
+      const response = await axios.post(
+        `${API_URL}/videos?api_key=${API_KEY}`,
+        {
+          title: eventRec.target.name.value,
+          description: eventRec.target.name.value,
+          image: `${API_URL}/images/thumbnail.jpg`,
+        }
+      );
+
+      if (response.status === 201) {
+        eventRec.target.reset();
+        alert("Your upload was successful!");
+        navigate("/");
+      } else {
+        alert("Your upload failed!");
+      }
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    alert("Your upload was successful!");
-    navigate("/");
+    uploadVideo(event);
   };
 
   return (
