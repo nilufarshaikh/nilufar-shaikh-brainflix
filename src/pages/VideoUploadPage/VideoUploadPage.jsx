@@ -16,8 +16,8 @@ const VideoUploadPage = () => {
       const response = await axios.post(
         `${API_URL}/videos?api_key=${API_KEY}`,
         {
-          title: eventRec.target.name.value,
-          description: eventRec.target.name.value,
+          title: eventRec.target.title.value,
+          description: eventRec.target.description.value,
           image: `${API_URL}/images/thumbnail.jpg`,
         }
       );
@@ -30,7 +30,7 @@ const VideoUploadPage = () => {
         alert("Your upload failed!");
       }
     } catch (error) {
-      console.log("Error", error);
+      console.log(error);
     }
   };
 

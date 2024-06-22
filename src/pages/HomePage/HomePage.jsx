@@ -33,11 +33,7 @@ const HomePage = () => {
     getVideos();
   }, []);
 
-  let selectedVideoId = null;
-
-  if (videos.length !== 0) {
-    selectedVideoId = videoId || selectedVideo.id;
-  }
+  let selectedVideoId = videoId || videos[0]?.id;
 
   useEffect(() => {
     const getSingleVideo = async (selectedVideoId) => {
